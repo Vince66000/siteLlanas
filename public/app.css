@@ -1,0 +1,15 @@
+a {
+    color: white;
+}
+a:hover {
+    color: #AAAAAA;
+}
+
+body {
+    background-color: #E9ECEF;
+}
+
+#logo {
+    width: 100px;
+    height: 50px;
+}
