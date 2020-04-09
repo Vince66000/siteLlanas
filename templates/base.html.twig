@@ -1,3 +1,5 @@
+
+
 <!DOCTYPE html>
 <html>
     <head>
@@ -9,11 +11,12 @@
         <link rel="stylesheet" href="{{ asset('app.css') }}">
     </head>
     <body>
-    <div class="jumbotron">
-        <h1>E. Llanas</h1>
-    </div>
-    <nav class="navbar navbar-expand-lg navbar-secondary bg-secondary">
-        <a class="navbar-brand" href="#" ><img src="{{ asset('images/ellanas.png')}}" alt="logo" style="width: 100px; height: 45px"></a>
+
+{#    <div class="jumbotron">#}
+{#        <h1>E. Llanas</h1>#}
+{#    </div>#}
+    <nav class="navbar navbar-expand-lg navbar-perso bg-perso" style="height: 80px">
+        <a class="navbar-brand" href="{{ path('home') }}" ><img src="{{ asset('images/ellanas.png')}}" alt="logo" style="width: 100px; height: 45px"></a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
@@ -21,32 +24,44 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav mr-auto">
                 <li class="nav-item active">
-                    <a class="nav-link" href="#">Accueil <span class="sr-only">(current)</span></a>
+                    <a class="nav-link" href="{{ path('home') }}">Accueil <span class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         Oeuvres
                     </a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <a class="dropdown-item" href="#">Acryliques et Huiles</a>
-                        <a class="dropdown-item" href="#">Pastels</a>
-                        <a class="dropdown-item" href="#">Encres</a>
-                        <a class="dropdown-item" href="#">Collages</a>
-                        <a class="dropdown-item" href="#">Dessins</a>
-                        <a class="dropdown-item" href="#">Aquarelles et Gouaches</a>
-                        <a class="dropdown-item" href="#">Créations diverses</a>
+                        <a class="dropdown-item" href="{{ path('getAcrylic')  }}">Acryliques et Huiles</a>
+                        <a class="dropdown-item" href="{{ path('getPastel') }}">Pastels</a>
+                        <a class="dropdown-item" href="{{ path('getInk') }}">Encres</a>
+                        <a class="dropdown-item" href="{{ path('getSticking') }}">Collages</a>
+                        <a class="dropdown-item" href="{{ path('getDraws') }}">Dessins</a>
+                        <a class="dropdown-item" href="{{ path('getWatercolor')  }}">Aquarelles et Gouaches</a>
+                        <a class="dropdown-item" href="{{ path('getVarious') }}">Créations diverses</a>
                     </div>
                 </li>
+
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Atelier</a>
+                    <a class="nav-link" href="{{ path('workshop') }}">Atelier</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="{{ path('news') }}">Actualité</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Contact</a>
+                    <a class="nav-link" href="{{ path('contact') }}">Contact</a>
                 </li>
-
+            </ul>
+            <ul class="navbar-nav ml-auto">
+            {% if not app.user %}
+                <li class="nav-item" style="float: right">
+                    <a class="nav-link " href="{{ path('admin.getAll') }}" >Connexion</a>
+                </li>
+            {% endif %}
+            {% if app.user %}
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ path('logout') }}">Se déconnecter</a>
+                </li>
+            {% endif %}
             </ul>
         </div>
     </nav>
