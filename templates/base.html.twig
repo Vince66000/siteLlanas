@@ -2,56 +2,56 @@
 
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="UTF-8">
-        <title>{% block title %}Welcome!{% endblock %}</title>
-        {% block stylesheets %}{% endblock %}
-        <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet"
-              integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-        <link rel="stylesheet" href="{{ asset('app.css') }}">
-    </head>
-    <body>
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}Bienvenue!{% endblock %}</title>
+    {% block stylesheets %}{% endblock %}
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="{{ asset('app.css') }}">
+</head>
+<body>
 
 {#    <div class="jumbotron">#}
 {#        <h1>E. Llanas</h1>#}
 {#    </div>#}
-    <nav class="navbar navbar-expand-lg navbar-perso bg-perso" style="height: 80px">
-        <a class="navbar-brand" href="{{ path('home') }}" ><img src="{{ asset('images/ellanas.png')}}" alt="logo" style="width: 100px; height: 45px"></a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
+<nav class="navbar navbar-expand-lg navbar-perso bg-perso" style="height: 80px">
+    <a class="navbar-brand" href="{{ path('home') }}" ><img src="{{ asset('images/ellanas.png')}}" alt="logo" style="width: 100px; height: 45px"></a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
 
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav mr-auto">
-                <li class="nav-item active">
-                    <a class="nav-link" href="{{ path('home') }}">Accueil <span class="sr-only">(current)</span></a>
-                </li>
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        Oeuvres
-                    </a>
-                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <a class="dropdown-item" href="{{ path('getAcrylic')  }}">Acryliques et Huiles</a>
-                        <a class="dropdown-item" href="{{ path('getPastel') }}">Pastels</a>
-                        <a class="dropdown-item" href="{{ path('getInk') }}">Encres</a>
-                        <a class="dropdown-item" href="{{ path('getSticking') }}">Collages</a>
-                        <a class="dropdown-item" href="{{ path('getDraws') }}">Dessins</a>
-                        <a class="dropdown-item" href="{{ path('getWatercolor')  }}">Aquarelles et Gouaches</a>
-                        <a class="dropdown-item" href="{{ path('getVarious') }}">Créations diverses</a>
-                    </div>
-                </li>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+                <a class="nav-link" href="{{ path('home') }}">Accueil <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Oeuvres
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <a class="dropdown-item" href="{{ path('getAcrylic')  }}">Acryliques et Huiles</a>
+                    <a class="dropdown-item" href="{{ path('getPastel') }}">Pastels</a>
+                    <a class="dropdown-item" href="{{ path('getInk') }}">Encres</a>
+                    <a class="dropdown-item" href="{{ path('getSticking') }}">Collages</a>
+                    <a class="dropdown-item" href="{{ path('getDraws') }}">Dessins</a>
+                    <a class="dropdown-item" href="{{ path('getWatercolor')  }}">Aquarelles et Gouaches</a>
+                    <a class="dropdown-item" href="{{ path('getVarious') }}">Créations diverses</a>
+                </div>
+            </li>
 
-                <li class="nav-item">
-                    <a class="nav-link" href="{{ path('workshop') }}">Atelier</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="{{ path('news') }}">Actualité</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="{{ path('contact') }}">Contact</a>
-                </li>
-            </ul>
-            <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+                <a class="nav-link" href="{{ path('workshop') }}">Atelier</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{{ path('news') }}">Actualité</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{{ path('contact') }}">Contact</a>
+            </li>
+        </ul>
+        <ul class="navbar-nav ml-auto">
             {% if not app.user %}
                 <li class="nav-item" style="float: right">
                     <a class="nav-link " href="{{ path('admin.getAll') }}" >Connexion</a>
@@ -61,19 +61,23 @@
                 <li class="nav-item">
                     <a class="nav-link" href="{{ path('logout') }}">Se déconnecter</a>
                 </li>
+                <li class="nav-item">
+                    <a href="{{ path('admin.getAll') }}" class="nav-link">Tableau de bord</a>
+                </li>
             {% endif %}
-            </ul>
-        </div>
-    </nav>
-        {% block body %}{% endblock %}
+        </ul>
+    </div>
+</nav>
+{% block body %}{% endblock %}
 
-    <script src="https://code.jquery.com/jquery-3.4.1.js"  integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
-            crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
-            crossorigin="anonymous"></script>
-    <div id="fb-root"></div>
-    <script async defer crossorigin="anonymous" src="https://connect.facebook.net/fr_FR/sdk.js#xfbml=1&version=v6.0"></script>
-        {% block javascripts %}{% endblock %}
+<script src="https://code.jquery.com/jquery-3.4.1.js"  integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
+        crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+<div id="fb-root"></div>
+<script async defer crossorigin="anonymous" src="https://connect.facebook.net/fr_FR/sdk.js#xfbml=1&version=v6.0"></script>
+{% block javascripts %}{% endblock %}
 
-    </body>
+</body>
+
 </html>

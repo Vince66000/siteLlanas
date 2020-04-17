@@ -1,11 +1,16 @@
 {% extends 'base.html.twig' %}
 
+
+{% block title 'Actualités' %}
+
 {% block body %}
 
-    <div class="container">
-        <div class="row justify-content-center">
-            <div class="col-xl" style="margin: 30px; text-align: center ">
-                <div
+    <h1 style="text-align: center; color: white">Actualités</h1>
+    <div style="margin-top: 50px"></div>
+    <div class="row justify-content-center" style=" margin: auto;display: flex; flex-direction: row; align-content: space-around; width: 95%; height: auto">
+
+
+                <div    style="margin: 5px "
                         class="fb-page"
                         data-href="https://www.facebook.com/E.llanas.art/?__tn__=%2Cd%2CP-R&amp;eid=ARAXrfSPOTZuUG8XRfwmuOVVkk8vLQQ86Bkz_ZdyHMpO9zb4E2EXR5EUbaz2ENAtrq32QXehiaosiBA7"
                         data-tabs="timeline"
@@ -15,16 +20,20 @@
                         data-adapt-container-width="true"
                         data-hide-cover="false"
                         data-show-facepile="true">
-                    {#            <blockquote cite="https://www.facebook.com/E.llanas.art/?__tn__=%2Cd%2CP-R&amp;eid=ARAXrfSPOTZuUG8XRfwmuOVVkk8vLQQ86Bkz_ZdyHMpO9zb4E2EXR5EUbaz2ENAtrq32QXehiaosiBA7"#}
-                    {#                        class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/E.llanas.art/?__tn__=%2Cd%2CP-R&amp;eid=ARAXrfSPOTZuUG8XRfwmuOVVkk8vLQQ86Bkz_ZdyHMpO9zb4E2EXR5EUbaz2ENAtrq32QXehiaosiBA7">#}
-                    {#                    E.llanas-art</a></blockquote>#}
                 </div>
+            <div style="width: 130px "></div>
+            <div class="col-1"   >
+                <div style="margin:5px; border: white solid 2px" class="fb-page" data-href="https://www.facebook.com/BouchonCatalan/" data-tabs="timeline" data-width="" data-height="70" data-small-header="false" data-adapt-container-width="false" data-hide-cover="false" data-show-facepile="false"><blockquote cite="https://www.facebook.com/BouchonCatalan/" class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/BouchonCatalan/">Le Bouchon Catalan</a></blockquote></div>
+                <div style="margin:5px; border: white solid 2px" class="fb-page" data-href="https://www.facebook.com/La-Maison-Secall-1453953411572129/" data-tabs="timeline" data-width="" data-height="70" data-small-header="false" data-adapt-container-width="false" data-hide-cover="false" data-show-facepile="false"><blockquote cite="https://www.facebook.com/La-Maison-Secall-1453953411572129/" class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/La-Maison-Secall-1453953411572129/">La maison Secall</a></blockquote></div>
+                <div style="margin:5px; border: white solid 2px" class="fb-page" data-href="https://www.facebook.com/masnostrecase/" data-tabs="timeline" data-width="" data-height="70" data-small-header="false" data-adapt-container-width="false" data-hide-cover="false" data-show-facepile="false"><blockquote cite="https://www.facebook.com/masnostrecase/" class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/masnostrecase/">Mas Nostre Case</a></blockquote></div>
+                <div style="margin:5px; border: white solid 2px" class="fb-page" data-href="https://www.facebook.com/pontdesarts66440/" data-tabs="timeline" data-width="" data-height="70" data-small-header="false" data-adapt-container-width="false" data-hide-cover="false" data-show-facepile="false"><blockquote cite="https://www.facebook.com/pontdesarts66440/" class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/pontdesarts66440/">Le pont des Arts</a></blockquote></div>
+                <div style="margin:5px; border: white solid 2px" class="fb-page" data-href="https://www.facebook.com/Haka.Informatique/" data-tabs="timeline" data-width="" data-height="70" data-small-header="false" data-adapt-container-width="false" data-hide-cover="false" data-show-facepile="false"><blockquote cite="https://www.facebook.com/Haka.Informatique/" class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/Haka.Informatique/">Haka Informatique</a></blockquote></div>
             </div>
         </div>
-    </div>
-    <div class="container">
-        <div class="fb-page" data-href="https://www.facebook.com/BouchonCatalan/" data-tabs="timeline" data-width="" data-height="70" data-small-header="false" data-adapt-container-width="false" data-hide-cover="false" data-show-facepile="false"><blockquote cite="https://www.facebook.com/BouchonCatalan/" class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/BouchonCatalan/">Le Bouchon Catalan</a></blockquote></div>
-    </div>
+
+
+
+
 {% endblock %}
   {% block javascripts %}
       <div id="fb-root"></div>

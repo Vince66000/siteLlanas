@@ -49,7 +49,7 @@ class AdminArtworkController extends AbstractController
             $request->query->getInt('page', 1),
             10
         );
-        return $this->render('artworks/index.html.twig', [
+        return $this->render('artworks/dashboard.html.twig', [
             'current_menu' => 'artworks',
             'artworks' => $artworks
         ]);

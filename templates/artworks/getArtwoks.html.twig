@@ -1,8 +1,13 @@
 {% extends 'base.html.twig' %}
 
-    {% block body %}
 
-<div class="row" style="width: 95%; height: 100%;  border: solid 5px white; margin: auto; border-radius: 40px; background-color: dimgray; ">
+
+{% block title 'Mes tableaux' %}
+
+    {% block body %}
+        <div style="margin-top: 50px"></div>
+
+<div class="row" style="width: 95%; height: 100%;   border: solid 5px white; margin: auto; border-radius: 40px; background-color: dimgray; ">
 
     {% for artwork in artworks %}
         {% if artwork.filename %}
@@ -20,9 +25,15 @@
         {% endif %}
     {% endfor %}
 </div>
-    <div class="pagination" style="text-align: center">
-        {{ knp_pagination_render(artworks) }}
-    </div>
+        <div style="margin-top: 40px"></div>
+        <div class="pagination justify-content-center">
+            {{ knp_pagination_render(artworks, null, {}, {
+                'position': 'centered',
+                'size': 'medium',
+                'rounded': true,
+
+            }) }}
+        </div>
     {% endblock %}
 
 

@@ -1,5 +1,7 @@
 {% extends 'base.html.twig' %}
 
+{% block title 'Me contacter' %}
+
 {% block body %}
         {% for message in app.flashes('success') %}
             <div class="alert alert-success" style="width: 100%; text-align: center">

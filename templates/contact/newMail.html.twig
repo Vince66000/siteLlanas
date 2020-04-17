@@ -5,26 +5,55 @@
 
 
     <div id="contactForm" class="col-sm mt-4">
-        <h1 style="text-align: center; margin-bottom: 50px">Ecrivez moi</h1>
+        <h1 style="text-align: center; margin-bottom: 50px; color: white">Ecrivez moi</h1>
         {{ form_start(form)}}
         <div class="container col-4">
-            <div class="row" style="width: 100%">
+            <div class="row" style="width: 100%;color: white">
                 <div class="col">{{ form_row(form.firstName, {'label': 'Prénom'}) }}</div>
                 <div class="col">{{ form_row(form.lastName, {'label': 'Nom'}) }}</div>
             </div>
-            <div class="row" style="width: 100%">
+            <div class="row" style="width: 100%; color: white">
                 <div class="col">{{ form_row(form.phone, {'label': 'Téléphone'}) }}</div>
                 <div class="col">{{ form_row(form.email, {'label': 'Email'}) }}</div>
             </div>
-            <div class="row" style="width: 100%">
+            <div class="row" style="width: 100%; color: white">
                 <div class="col">{{ form_rest(form) }}</div>
             </div>
             <div class="form-group">
-                <button class="btn btn-primary">Envoyer</button>
+                <button id="send" disabled="disabled" class="btn btn-primary">Envoyer</button>
             </div>
+
             {{ form_end(form) }}
+
+        </div>
+        <div class="alert alert-success" style="width: 100%; text-align: center" >
+            <label for="accept">J'accepte de recevoir une réponse par mail</label>
+            <input name="accept" id="accept" onchange="checkbox() " type="checkbox">
+
+            <p>Vos coordonnées ne seront pas enregistrées dans nos bases de données,
+                ni communiquées à des tiers, et ne seront utilisées, le cas échéant, que pour répondre aux échanges
+                d'emails sollicités par l'envoi de ce formulaire.</p>
         </div>
 
+
     </div>
+
+{% endblock %}
+{% block javascripts %}
+
+    <script type="text/javascript">
+
+        function checkbox() {
+
+            if(document.getElementById('accept').checked === true){
+                document.getElementById('send').disabled = '';
+            }
+            else{
+
+                document.getElementById('send').disabled = 'disabled';
+            }
+        }
+    </script>
+
 
 {% endblock %}
