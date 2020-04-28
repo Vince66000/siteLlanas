@@ -1,8 +1,10 @@
 a {
     color: white;
+
 }
 a:hover {
     color: #AAAAAA;
+    text-decoration: none;
 }
 
 body {
@@ -10,9 +12,10 @@ body {
 }
 
 #logo {
-    width: 100px;
-    height: 200px;
+    width: 200px;
+    height: 400px;
 }
+
 #map {
     border: 10px white;
 }
@@ -21,5 +24,15 @@ body {
     width: 100px;
     height: 200px;
     margin: auto;
+}
+
+hr {
+    border-top: 3px white
+}
+.fixed {
+    position: fixed;
+    top: 0;
+    background-color: dimgray;
+
 }
 

@@ -14,7 +14,7 @@ class ImageSize extends AbstractExtension
             new TwigFunction('ImageSize', [$this, 'ImageSize']),
         ];
     }
-//
+
         public function ImageSize(Artwork $artwork)
         {
 

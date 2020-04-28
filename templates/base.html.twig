@@ -9,19 +9,17 @@
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet"
           integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="{{ asset('app.css') }}">
+    <script src="https://use.fontawesome.com/releases/v5.12.1/js/all.js" crossorigin="anonymous"></script>
 </head>
 <body>
 
-{#    <div class="jumbotron">#}
-{#        <h1>E. Llanas</h1>#}
-{#    </div>#}
-<nav class="navbar navbar-expand-lg navbar-perso bg-perso" style="height: 80px">
-    <a class="navbar-brand" href="{{ path('home') }}" ><img src="{{ asset('images/ellanas.png')}}" alt="logo" style="width: 100px; height: 45px"></a>
+<nav class="navbar navbar-expand-lg navbar-perso bg-perso" id="navbar" style="height: 100px">
+    <a class="navbar-brand" href="{{ path('home') }}" ><img src="{{ asset('images/ellanas.png')}}" alt="logo" id="logo" style="width: 300px; height: 150px; margin-top: 50px"></a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
     </button>
 
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <div class="collapse navbar-collapse" id="navbarSupportedContent" style="background-color: dimgray" >
         <ul class="navbar-nav mr-auto">
             <li class="nav-item active">
                 <a class="nav-link" href="{{ path('home') }}">Accueil <span class="sr-only">(current)</span></a>
@@ -53,7 +51,7 @@
         </ul>
         <ul class="navbar-nav ml-auto">
             {% if not app.user %}
-                <li class="nav-item" style="float: right">
+                <li class="nav-item" style="float: right; margin-right: 15px">
                     <a class="nav-link " href="{{ path('admin.getAll') }}" >Connexion</a>
                 </li>
             {% endif %}
@@ -66,18 +64,61 @@
                 </li>
             {% endif %}
         </ul>
+
     </div>
 </nav>
-{% block body %}{% endblock %}
+<div style="margin-top: 50px">
+{#    <hr style="border-top: 3px solid white; width: 95%; margin-bottom: 5px">#}
+{#    <hr style="border-top: 3px solid white; width: 95%; margin-top: 3px">#}
+</div>
 
+{% block body %}{% endblock %}
+<footer class="footer text-center">
+    <hr style="border-top: 3px solid white; width: 95%;margin-bottom: 5px">
+    <hr style="border-top: 3px solid white; width: 95%; margin-top: 3px">
+
+    <div class="container" style="color: white">
+        <div class="row">
+            <!-- Footer Location-->
+            <div class="col-lg-4 mb-5 mb-lg-0">
+                <h4 class=""><a href="{{ path('workshop') }}">Atelier</a></h4>
+                <p class="lead mb-0">17 Rue Lucien Deslinières<br />6600 Perpignan</p>
+            </div>
+            <div class="col-lg-4 mb-5 mb-lg-0">
+                <h4 class="">Contact</h4>
+                <p class="lead mb-0"><a id="tel" href="tel:0662224957">06 24 42 60 09</a></p>
+                <p class="lead mb-0"><a id="mail" href="{{ path('contact/newMail') }}">Ecrivez moi!</a></p>
+            </div>
+            <!-- Footer Social Icons-->
+            <div class="col-lg-4 mb-5 mb-lg-0">
+                <h4 class="">Mes réseaux</h4>
+                <a class=" " target="_blank" href="https://www.facebook.com/E.llanas.art/"><i class="fab fa-facebook fa-2x"></i></a>
+                <a class=" " target="_blank" href="https://www.instagram.com/e.llanas.art/"><i class="fab fa-instagram-square fa-2x"></i></a>
+                <br/>
+                <a class="lead mb-0" href="https://haka-informatique.fr/">Propulsé par Haka Informatique</a>
+
+            </div>
+
+
+        </div>
+    </div>
+</footer>
+<div style="margin-bottom: 20px"></div>
+
+<script src="{{ asset('app.js') }}"></script>
 <script src="https://code.jquery.com/jquery-3.4.1.js"  integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
         crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-3.5.0.js" integrity="sha256-r/AaFHrszJtwpe+tHyNi/XCfMxYpbsRg2Uqn0x3s2zc=" crossorigin="anonymous"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
         crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
+
 <div id="fb-root"></div>
 <script async defer crossorigin="anonymous" src="https://connect.facebook.net/fr_FR/sdk.js#xfbml=1&version=v6.0"></script>
+
 {% block javascripts %}{% endblock %}
 
 </body>
 
 </html>
+
